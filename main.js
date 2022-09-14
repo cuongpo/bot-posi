@@ -1,3 +1,4 @@
+async function main() {
 // Get price from binance
 const response = await fetch('https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT');
 const myJson = await response.json(); //extract JSON from the http response
@@ -18,12 +19,15 @@ var different = Math.round(different*100)/100;
 // Call API telegram when different > xx 
 var token = "5665439717:AAGPEnkul6JLNBa1BssjlgGK0CMPFilyiw0";
 var chat_id = 1354543512;
-const response2 = await fetch('https://api.telegram.org/bot'+token+'/sendMessage?chat_id='+chat_id+'&text='+'-- gia binance:'+price_of_binance+' gia posi:'+price_of_posi+'-- different:'+different, {
-    method: 'POST',
-    body: "123", // string or object
-    headers: {
-      'Content-Type': 'application/json'
-    }
-});
+if (different > 100) {
+    const response2 = await fetch('https://api.telegram.org/bot'+token+'/sendMessage?chat_id='+chat_id+'&text='+'gia binance:'+price_of_binance+'--gia posi:'+price_of_posi+'--different:'+different, {
+        method: 'POST',
+        body: "123", // string or object
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+}
+}
 
-
+setInterval(main,10000);
