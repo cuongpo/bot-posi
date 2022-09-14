@@ -3,7 +3,7 @@ async function main() {
 const response = await fetch('https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT');
 const myJson = await response.json(); //extract JSON from the http response
 const price_of_binance = Math.round(myJson.price*100)/100;
-console.log(price_of_binance);
+// console.log(price_of_binance);
 
 // Get price from Posi
 var x = document.title.toString();
@@ -11,7 +11,7 @@ var doan_dau = x.slice(0,2);
 var doan_sau = x.slice(3,10);
 var price_of_posi_string = doan_dau + doan_sau;
 var price_of_posi = parseFloat(price_of_posi_string);
-console.log(price_of_posi);
+console.log(price_of_binance + ' ' + price_of_posi);
 
 // Check diffrerent between those price
 var different = Math.abs(price_of_binance - price_of_posi);
