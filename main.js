@@ -1,5 +1,5 @@
 async function main() {
-const amount = 20*25;
+const amount = 30*25;
 // Get price from binance
 const response = await fetch('https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT');
 const myJson = await response.json(); //extract JSON from the http response
@@ -41,4 +41,4 @@ if (different > 100) {
 }
 }
 
-setInterval(main,10000);
+setInterval(main,1000);
