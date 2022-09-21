@@ -7,7 +7,7 @@ const price_of_binance = Math.round(myJson.price*100)/100;
 // console.log(price_of_binance);
 
 // Get price from Posi
-var z = document.getElementsByClassName("css-15sqfp6");
+var z = document.getElementsByClassName("chakra-text css-1kobocp");
 var x = z[0].innerHTML.toString();
 var doan_dau = x.slice(0,2);
 var doan_sau = x.slice(3,10);
@@ -42,7 +42,7 @@ if (different >= 100) {
             'Content-Type': 'application/json'
         }
     });
-
+}
   
  
 const response3 = await fetch('https://api.telegram.org/bot'+token2+'/sendMessage?chat_id='+chat_id+'&text='+'gia binance: '+price_of_binance+'--gia posi: '+price_of_posi+'--different: '+different+'--profit du kien '+profit, {
@@ -53,4 +53,4 @@ const response3 = await fetch('https://api.telegram.org/bot'+token2+'/sendMessag
         }
     });
 }
-setInterval(main,1000);
+setInterval(main,1000); 
