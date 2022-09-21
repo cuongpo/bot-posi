@@ -34,7 +34,7 @@ var token2 = "5607811121:AAGPpHgfXUfBLbevVEpBc46wx-Ra1SHDuo4";
   
 
 
-if (different >= 100) {
+if (Math.abs(different) >= 100) {
     const response2 = await fetch('https://api.telegram.org/bot'+token+'/sendMessage?chat_id='+chat_id+'&text='+'gia binance: '+price_of_binance+'--gia posi: '+price_of_posi+'--different: '+different+'--profit du kien '+profit, {
         method: 'POST',
         body: "123", // string or object
