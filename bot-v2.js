@@ -13,7 +13,7 @@ var doan_dau = x.slice(0,2);
 var doan_sau = x.slice(3,10);
 var price_of_posi_string = doan_dau + doan_sau;
 var price_of_posi = parseFloat(price_of_posi_string);
-console.log(price_of_binance + ' ' + price_of_posi);
+// console.log(price_of_binance + ' ' + price_of_posi);
 
 // Check diffrerent between those price
 var different = price_of_binance - price_of_posi;
